@@ -1,11 +1,13 @@
+require('dotenv').config();
+
 const amqp = require('amqplib/callback_api');
 const axios = require('axios');
 
-const RABBITMQ_URL = 'amqps://cafpasvn:dIXnKbsHNgNFfgqT9-vVDb5B3C07TpPH@crow.rmq.cloudamqp.com/cafpasvn';
-const QUEUE_NAME = 'user_created';
+const RABBITMQ_URL = process.env.RABBITMQ_URL;
+const QUEUE_NAME = process.env.QUEUE_NAME;
 
-const SENDPORTAL_API_URL = ''; 
-const API_TOKEN = ''; 
+const SENDPORTAL_API_URL = process.env.SENDPORTAL_API_URL; 
+const API_TOKEN = process.env.API_TOKEN; 
 
 function consumeMessages() {
     amqp.connect(RABBITMQ_URL, (error0, connection) => {
