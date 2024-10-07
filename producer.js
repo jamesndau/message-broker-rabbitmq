@@ -11,9 +11,9 @@ async function sendMessage() {
         await channel.assertQueue(QUEUE_NAME, { durable: true });
 
         const message = {
-            firstname: 'james',
-            lastname: 'kano',
-            email: 'kanojames743@gmail.com',
+            firstname: 'jay',
+            lastname: 'kanoti',
+            email: 'kanoti@gmail.com',
             date: new Date().toISOString()
         };
 
